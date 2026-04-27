@@ -9,7 +9,7 @@ export default function JokeGenerator() {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('https://api.example.com/jokes/random');
+      const response = await fetch('/api/jokes');
       if (!response.ok) throw new Error('Failed to fetch joke');
       const data = await response.json();
       setJoke(data.joke || data.setup + ' ' + data.punchline);
